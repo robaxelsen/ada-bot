@@ -1,0 +1,30 @@
+[
+    {
+        "id": 1,
+        "title": "Thoth's Fang",
+        "description": "Special serpent weapon.",
+        "cost": "1600 credits",
+        "tags": "tfang"
+    },
+    {
+        "id": 2,
+        "title": "Veil of the Sphinx",
+        "description": "Hides you from many mortal abilities that can pinpoint your location, including spy, scent, view, sense, window, fullsense, angel presences, demon presences, angel seek, allsight, falcon deliver, falcon track, falcon follow, falcon seek, mind glance, mind sense, grove who, grove look, grove eyes, forestwatch, foresttrack, mindnet, scry, farsee, who, users. Owning a Veil allows you to cut past the Veil defence of an opponent when locating him. This will _generally_ only work for one-time abilities, like 'sense', as opposed to abilities that trace someone on an on-going basis, like angel trace or forest track. Mutual friends (HELP FRIENDS) will be able to see past the Veil defence of each other. Does NOT hide you from abilities that do more than simply locate you, such as Metamorphosis tracking. Does not remove you from qw/bw and organisational who-type lists. If you have any doubts about the effect of the Veil on a given ability, ask before you buy!",
+        "cost": "2000 credits",
+        "tags": "veil"
+    },
+    {
+        "id": 3,
+        "title": "Gem of Cloaking",
+        "description": "Removes you from the who, clwho, and bw/qw lists. Removes you from the help city and house induction lists. Note: This does not remove you from HWHO, or CWHO. Similarly, it does not remove you from TRADEWHO for mutual allies, friends, citymates, and housemates. Please examine the gem carefully. It can be activated and deactivated. Examination of the gem should reveal the secret.",
+        "cost": "400 credits",
+        "tags": "gem"
+    },
+    {
+        "id": 4,
+        "title": "Eagle's Wings",
+        "description": "Lets you fly to 'On the clouds' where there are exits connecting directly (and thus very quickly!) to places across the lands.",
+        "cost": "800 credits",
+        "tags": "wings"
+    }
+]
