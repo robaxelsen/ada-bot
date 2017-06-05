@@ -80,3 +80,6 @@ $RECYCLE.BIN/
 
 # .nfs files are created when an open file is removed but is still being accessed
 .nfs*
+
+# ignore config file so I don't push my own details
+config.yaml
