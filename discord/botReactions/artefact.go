@@ -15,7 +15,7 @@ import (
 )
 
 type artie struct {
-	Trigger string
+    Trigger string
 }
 
 type Artefact struct {
@@ -49,41 +49,41 @@ func (p *artie) HelpDetail() string {
 }
 
 func (p *artie) Reaction(m *discordgo.Message, a *discordgo.Member, mType string) Reaction {
-	w := &tabwriter.Writer{}
-	buf := &bytes.Buffer{}
-	keyword := m.Content[len(settings.Settings.Discord.BotPrefix)+len(p.Trigger)+1:]
-	artefacts := getArtefacts()
-  for _, p := range artefacts {
-    if strings.Contains(p.Tags, keyword) {
-			w.Init(buf, 0, 4, 0, ' ', 0)
-			fmt.Fprintf(w, "```\n")
-			fmt.Fprintf(w, "Title: \t%s\n", p.Title)
-			fmt.Fprintf(w, "Description: \t%s\n", p.Description)
-			fmt.Fprintf(w, "Cost: \t%s\n", p.Cost)
-			fmt.Fprintf(w, "\n```")
-			w.Flush()
-		}
+    w := &tabwriter.Writer{}
+    buf := &bytes.Buffer{}
+    keyword := m.Content[len(settings.Settings.Discord.BotPrefix)+len(p.Trigger)+1:]
+    artefacts := getArtefacts()
+    for _, p := range artefacts {
+        if strings.Contains(p.Tags, keyword) {
+            w.Init(buf, 0, 4, 0, ' ', 0)
+            fmt.Fprintf(w, "```\n")
+            fmt.Fprintf(w, "Title: \t%s\n", p.Title)
+            fmt.Fprintf(w, "Description: \t%s\n", p.Description)
+            fmt.Fprintf(w, "Cost: \t%s\n", p.Cost)
+            fmt.Fprintf(w, "\n```")
+            w.Flush()
 	}
+    }
 
-	out := buf.String()
-	return Reaction{Text: out}
+    out := buf.String()
+    return Reaction{Text: out}
 }
 
 func getArtefacts() []Artefact {
-  raw, err := ioutil.ReadFile("./utils/data/artefacts.json")
-  if err != nil {
-      fmt.Println(err.Error())
-      os.Exit(1)
-  }
+    var c []Artefact
+    raw, err := ioutil.ReadFile("./utils/data/artefacts.json")
+    if err != nil {
+        fmt.Println(err.Error())
+        os.Exit(1)
+    }
 
-  var c []Artefact
-  json.Unmarshal(raw, &c)
-  return c
+    json.Unmarshal(raw, &c)
+    return c
 }
 
 func init() {
-	_artie := &artie{
-		Trigger: "artefact",
-	}
-	addReaction(_artie.Trigger, "CREATE", _artie)
+    _artie := &artie{
+        Trigger: "artefact",
+    }
+    addReaction(_artie.Trigger, "CREATE", _artie)
 }
